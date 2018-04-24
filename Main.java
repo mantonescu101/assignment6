@@ -15,12 +15,20 @@ public class Main {
 
 
     public static void main(String[] args) throws InterruptedException{
+        //Test1
         Map<String, Integer> offices = new HashMap<String, Integer>() {{
-            put("BX1", 101);
+            put("BX1", 50);
             put("BX2", 100);
         }};
+        Theater t = new Theater(100, 1, show);
 
-        Theater t = new Theater(100, 2, show);
+        //Test2
+//        Map<String, Integer> offices = new HashMap<String, Integer>() {{
+//            put("BX1", 400);
+//            put("BX2", 600);
+//        }};
+//        Theater t = new Theater(500, 2, show);
+
         BookingClient bc = new BookingClient(offices, t);
         joinAllThreads(bc.simulate());
     }

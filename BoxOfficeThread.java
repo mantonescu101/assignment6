@@ -39,7 +39,7 @@ public class BoxOfficeThread implements Runnable {
     @Override
     public void run() {
       //  int index = 0;
-        while(!isSoldOut && (index < IDs.length)){
+        while(!isSoldOut){
             lock.lock();
             Theater.Seat seat = theater.bestAvailableSeat();
             if(seat == null){
@@ -49,8 +49,8 @@ public class BoxOfficeThread implements Runnable {
             else{
                 if(index < IDs.length){
                     Theater.Ticket tick = theater.printTicket(BoxOfficeID, seat, IDs[index]);
+                    index++;
                 }
-                index++;
             }
             lock.unlock();
         }

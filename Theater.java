@@ -61,7 +61,7 @@ public class Theater {
                 i++;
             }
 
-            return "" + str + " " + getSeatNum();
+            return "" + str + getSeatNum();
         }
 
         /**
